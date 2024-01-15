@@ -10,11 +10,13 @@ sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 <p align="center">
       <img src="https://raw.githubusercontent.com/lthuan2011/BEVM/main/BTClayer2.JPG">
 </p>
+
 ## Check logs
 ```console
 sudo journalctl -u bevmd  -f -o cat
 ```
 ## Check on Telemetry
+
 ```console
 https://telemetry.bevm.io/#/0x41cfeafc7177775a0e838b3725a0178b89ebf5dde1b5f766becbf975a24e297b
 ```

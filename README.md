@@ -20,6 +20,9 @@ sudo journalctl -u bevmd  -f -o cat
 ```console
 https://telemetry.bevm.io/#/0x41cfeafc7177775a0e838b3725a0178b89ebf5dde1b5f766becbf975a24e297b
 ```
+## Setup Validator
+
+Please waiting guide from project
 
 ## Services Management
 ```console

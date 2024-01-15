@@ -11,6 +11,11 @@ sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```console
 sudo journalctl -u bevmd  -f -o cat
 ```
+## Check on Telemetry
+```console
+https://telemetry.bevm.io/#/0x41cfeafc7177775a0e838b3725a0178b89ebf5dde1b5f766becbf975a24e297b
+```
+
 ## Services Management
 ```console
 sudo systemctl daemon-reload

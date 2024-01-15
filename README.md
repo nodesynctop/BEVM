@@ -1,5 +1,6 @@
-# BEVM - Auto Install
+# BEVM - BTClayer2 
 
+## Auto Install
 ```console
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```

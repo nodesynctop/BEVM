@@ -33,6 +33,7 @@ sudo systemctl status bevmd
 sudo systemctl stop bevmd
 ```
 # Please follow me
+#### Website: ​https://nodesync.top/
 #### Docs: ​https://docs.nodesync.top/
 #### Telegram Group: ​https://t.me/nodesync_top
 #### Twitter: https://twitter.com/nodesync_top

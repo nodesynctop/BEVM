@@ -1,0 +1,90 @@
+#!/bin/bash
+clear
+
+if [[ ! -f "$HOME/.bash_profile" ]]; then
+    touch "$HOME/.bash_profile"
+fi
+
+if [ -f "$HOME/.bash_profile" ]; then
+    source $HOME/.bash_profile
+fi
+
+logo_nodesync(){
+
+clear
+
+ cat << "EOF"
+=========================================================================
+     _   _           _       ____
+    | \ | |         | |     / ___|
+    |  \| | ___   __| | ___| (__  _   _ ___    __   _____  ___  ___
+    |     |/ _ \ / _  |/ __\\__ \| | | |  _ \ / _| |_   _|/ _ \|  _ \
+    | |\  | (_) | (_) | /o_ ___) | |_| | | | | (_ _  | | | (_) | |_) |
+    |_| \_|\___/ \____|\___|____/ \__  |_| |_|\__(_) |_|  \___/|  _ /
+                                    _/ |                       | |
+                                   |__/                        |_|
+
+=========================================================================
+             Developed by: NodeSync.Top
+             Twitter: https://twitter.com/nodesync_top
+             Telegram: https://t.me/nodesync_top
+=========================================================================
+EOF
+
+}
+
+logo_nodesync;
+
+
+
+echo "===========BTClayer2 Install Easy======= " && sleep 1
+
+read -p "Do you want run node BTClayer2 ? (y/n): " choice
+
+if [ "$choice" == "y" ]; then
+
+if [ "$choice" == "y" ]; then
+    read -p "Set Node Name: " input_moniker
+    if [ -z "$input_moniker" ]; then
+    echo "Node Name cannot be empty!"
+    exit 1
+     fi
+     MONIKER="$input_moniker"
+     echo "Node Name is: $MONIKER"
+fi
+
+sudo apt update && apt upgrade -y
+sudo apt install curl  build-essential git wget jq make gcc tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev libgmp3-dev tar clang bsdmainutils ncdu unzip llvm libudev-dev protobuf-compiler -y
+cd $HOME
+sudo  wget -O bevm https://github.com/btclayer2/BEVM/releases/download/testnet-v0.1.1/bevm-v0.1.1-ubuntu20.04
+sudo chmod 744 bevm
+sudo mv bevm /usr/bin/
+sudo bevm --version
+cd $HOME
+
+sudo tee /etc/systemd/system/bevmd.service > /dev/null << EOF
+[Unit]
+Description=BTClayer2 Node
+After=network-online.target
+StartLimitIntervalSec=0
+[Service]
+User=$USER
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+ExecStart=/usr/bin/bevm \
+--chain=testnet --name="$MONIKER" \
+--pruning=archive \
+--telemetry-url "wss://telemetry.bevm.io/submit 0" \
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable bevmd
+sudo systemctl restart bevmd 
+fi
+
+echo -e "\e[1;32m Check status: \e[0m\e[1;36m${CYAN} sudo systemctl status bevmd ${NC}\e[0m"
+echo -e "\e[1;32m Check logs: \e[0m\e[1;36m${CYAN} sudo journalctl -u bevmd  -f -o cat ${NC}\e[0m"

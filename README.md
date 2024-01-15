@@ -9,13 +9,18 @@ sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 sudo journalctl -u bevmd  -f -o cat
 ```
 ## Services Management
-```sudo systemctl daemon-reload
+```console
+sudo systemctl daemon-reload
 ```
-```sudo systemctl enable bevmd
+```console
+sudo systemctl enable bevmd
 ```
-```sudo systemctl restart bevmd
+```console
+sudo systemctl restart bevmd
 ```
-```sudo systemctl status bevmd
+```console
+sudo systemctl status bevmd
 ```
-```sudo systemctl stop bevmd
+```console
+sudo systemctl stop bevmd
 ```

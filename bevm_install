@@ -84,7 +84,9 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable bevmd
 sudo systemctl restart bevmd 
-fi
 
 echo -e "\e[1;32m Check status: \e[0m\e[1;36m${CYAN} sudo systemctl status bevmd ${NC}\e[0m"
 echo -e "\e[1;32m Check logs: \e[0m\e[1;36m${CYAN} sudo journalctl -u bevmd  -f -o cat ${NC}\e[0m"
+fi
+
+

@@ -6,7 +6,7 @@
 ```console
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```
-
+![Auto install by NodeSync.Top](https://raw.githubusercontent.com/lthuan2011/BEVM/main/BTClayer2.JPG)
 ## Check logs
 ```console
 sudo journalctl -u bevmd  -f -o cat

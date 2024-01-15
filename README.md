@@ -8,9 +8,7 @@
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```
 <p align="center">
-      <img src="h(https://raw.githubusercontent.com/lthuan2011/BEVM/main/BTClayer2.JPG">
-
-![Auto install by NodeSync.Top](https://raw.githubusercontent.com/lthuan2011/BEVM/main/BTClayer2.JPG)
+      <img src="https://raw.githubusercontent.com/lthuan2011/BEVM/main/BTClayer2.JPG">
 </p>
 ## Check logs
 ```console

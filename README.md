@@ -2,7 +2,8 @@
 #### Website: https://www.bevm.io/
 #### Twitter:https://twitter.com/BTClayer2
 #### Discord: https://discord.gg/45NgPtSG5t
-## Auto Install
+## Auto Install - Minimum hardware requirement
+2 Cores, 4G Ram, 40G SSD, Ubuntu 22.04
 ```console
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```

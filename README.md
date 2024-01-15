@@ -6,6 +6,7 @@
 ```console
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```
+
 ## Check logs
 ```console
 sudo journalctl -u bevmd  -f -o cat

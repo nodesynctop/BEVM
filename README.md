@@ -7,6 +7,7 @@
 ```console
 sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
 ```
+Input your evm address, example: 0x06B53e7dB823fa2A5eb9Db4BCB259056b8c79be4
 <p align="center">
       <img src="https://raw.githubusercontent.com/lthuan2011/BEVM/main/demo_install.JPG">
 </p>

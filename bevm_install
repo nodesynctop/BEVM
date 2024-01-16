@@ -44,13 +44,13 @@ read -p "Do you want run node BTClayer2 ? (y/n): " choice
 if [ "$choice" == "y" ]; then
 
 if [ "$choice" == "y" ]; then
-    read -p "Set Node Name: " input_moniker
+    read -p "Enter wallet address: " input_moniker
     if [ -z "$input_moniker" ]; then
-    echo "Node Name cannot be empty!"
+    echo "Wallet cannot be empty!"
     exit 1
      fi
      MONIKER="$input_moniker"
-     echo "Node Name is: $MONIKER"
+     echo "Your address is: $MONIKER"
 fi
 
 sudo apt update && apt upgrade -y

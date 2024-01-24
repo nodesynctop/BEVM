@@ -92,11 +92,13 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable bevmd
-sudo systemctl restart bevmd 
+sudo systemctl restart bevmd
+nodepublickey="$(sudo journalctl -u bevmd  -o cat | grep "30333" |  awk 'NR==1{print $11}')"
 
 echo -e "\e[1;32m Check status: \e[0m\e[1;36m${CYAN} sudo systemctl status bevmd ${NC}\e[0m"
 echo -e "\e[1;32m Check logs: \e[0m\e[1;36m${CYAN} sudo journalctl -u bevmd  -f -o cat ${NC}\e[0m"
-echo  -e "\e[1;32m nodePublicKey: \e[0m\e[1;36m${CYAN} cat /ip4/$your_ip/tcp/30333/ws/p2p/nodePublicKey ${NC}\e[0m"
+echo  -e "\e[1;32m Your ip: \e[0m\e[1;36m${CYAN} $your_ip ${NC}\e[0m"
+echo  -e "\e[1;32m nodePublicKey: \e[0m\e[1;36m${CYAN} $nodepublickey ${NC}\e[0m"
 fi
 
 

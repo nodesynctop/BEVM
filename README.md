@@ -5,7 +5,7 @@
 ## Auto Install - Minimum hardware requirement
 2 Cores, 4G Ram, 40G SSD, Ubuntu 22.04
 ```console
-sudo apt install curl -y && source <(curl -s https://nodesync.top/bevm_install)
+sudo apt install curl -y && source <(curl -s https://raw.githubusercontent.com/lthuan2011/BEVM/main/bevm_install)
 ```
 Input your wallet address, example: 0x06B53e7dB823fa2A5eb9Db4BCB259056b8c79be4
 <p align="center">

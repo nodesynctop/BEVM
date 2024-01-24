@@ -67,6 +67,8 @@ sudo mv bevm /usr/bin/
 sudo bevm --version
 cd $HOME
 
+your_ip="$(curl ifconfig.me)"
+
 sudo tee /etc/systemd/system/bevmd.service > /dev/null << EOF
 [Unit]
 Description=BTClayer2 Node
@@ -79,7 +81,7 @@ RestartSec=3
 LimitNOFILE=65535
 ExecStart=/usr/bin/bevm \
 --chain=testnet --name="$MONIKER" \
---port=30333:30333 \
+--port=30333 \
 --pruning=archive \
 --telemetry-url "wss://telemetry.bevm.io/submit 0" \
 
@@ -93,7 +95,7 @@ sudo systemctl restart bevmd
 
 echo -e "\e[1;32m Check status: \e[0m\e[1;36m${CYAN} sudo systemctl status bevmd ${NC}\e[0m"
 echo -e "\e[1;32m Check logs: \e[0m\e[1;36m${CYAN} sudo journalctl -u bevmd  -f -o cat ${NC}\e[0m"
-echo  -e "\e[1;32m nodePublicKey: \e[0m\e[1;36m${CYAN} cat /ip4/publicIP/tcp/30333/ws/p2p/nodePublicKey ${NC}\e[0m"
+echo  -e "\e[1;32m nodePublicKey: \e[0m\e[1;36m${CYAN} cat /ip4/$your_ip/tcp/30333/ws/p2p/nodePublicKey ${NC}\e[0m"
 fi
 
 

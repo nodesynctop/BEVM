@@ -59,7 +59,7 @@ cd $HOME
 
 sudo systemctl stop bevmd
 sudo systemctl disable bevmd
-rm -rf etc/systemd/system/bevmd.service
+rm -rf /etc/systemd/system/bevmd.service
 sudo systemctl daemon-reload
 rm -rf /usr/bin/bevm
 
